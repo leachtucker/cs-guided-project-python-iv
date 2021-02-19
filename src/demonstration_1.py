@@ -22,5 +22,20 @@ string objects in Python. Think about how character encoding works and explore
 if there is a mathematical approach that you can take.*
 """
 def to_lower_case(string):
-    # Your code here
+    result = ""
+
+    for char in string:
+        num = ord(char)
+
+        # Add 32 to num if it falls within this range
+        if num >= 65 and num <= 90:
+            num += 32
+
+        result += chr(num)
+
+    return result
+
+print(to_lower_case("LoL"))
+print(to_lower_case("Hello World"))
+print(to_lower_case("Test Test !@#"))
 
